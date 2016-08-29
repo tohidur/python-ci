@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<!-- Create Board Modal -->
+<div class="modal fade" id="createBoard" tabindex="-1" role="dialog" aria-labelledby="createBoardLabel">
+  <div class="modal-dialog add-link-dialog" role="document">
+    <div class="modal-content add-link-content">
+      <div class="modal-body">
+        <h4 class="modal-title"> Create a new board </h4>
+        <a class="close-modal" data-dismiss="modal" aria-label="Close">
+    		<span aria-hidden="true"><i class="fa fa-times"></i></span>
+    	</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <nav class="navbar navbar-default navbar navbar-home navbar-fixed-top header topnav" role="navigation">
+    <div class="navbar-header">
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+         </button>
+        <a class="#" href="#"> <img src="{% static 'img/logo_w.png' %}" class="logo" alt="logo"></a>
+     </div>
+     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        	<div class="">
+                <ul class="nav navbar-nav navbar-right">
+ 					<li> <a href="#" data-toggle="modal" data-target="#addLink"> How it works ? </a> </li>
+ 					<li> <a href="#" data-toggle="modal" data-target="#addLink"> Login </a> </li>
+ 					<li> <a href="#" data-toggle="modal" data-target="#addLink"> Sign up </a> </li>
+                </ul>
+             </div>
+  	</div>
+  	<div class="clearfix"></div>
+</nav> -->
+  <!-- Section Home -->
+<section class="intro-header pos-rel">
+    <div class="container">
+    	<div class="bg-gradient"></div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="intro-message">
+					<h1 class="text-bg text-center"> About Us </h1>
+                    <h4 class="sec-title text-center"> We just love creating products which solve real life problems </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  <section class="pad-75">
+	<h1 class="text-center"> Our Team </h1>
+	<div class="col-md-8 col-sm-10 col-xs-12 align-center">
+		<div class="team-card col-md-6 col-sm-6 col-xs-12">
+			<div class="img-container">
+				<img src="{% static 'img/tohidur.png' %}" class="img-responsive" alt="Tohidur Rahaman Backend Developer">
+			</div>
+			<div class="info">
+				<h3 class="name"> Tohidur Rahaman </h3>
+				<h4 class="designation"> Backend Developer </h4>
+			 	<p> Loves writing code and passionate about creating new products. </p>
+			 	<div class="footer-links">
+				 	<ul class="profile-links">
+				 		<li><a href="https://linkedin.com/in/tohidur" target="_blank"> <i class="fa fa-linkedin"></i> </a> </li>
+				 		<li><a href="https://angel.co/tohidur" target="_blank"> <i class="fa fa-angellist"></i> </a> </li>
+				 		<li><a href="https://github.com/tohidur" target="_blank"> <i class="fa fa-github"></i> </a> </li>
+				 		<li><a href="https://www.facebook.com/rh.tohidur" target="_blank"> <i class="fa fa-facebook"></i> </a> </li>
+				 	</ul>
+			 	</div>
+			</div>
+		</div>
+		<div class="team-card col-md-6 col-sm-6 col-xs-12">
+			<div class="img-container">
+				<img src="{% static 'img/sushant.png' %}" class="img-responsive" alt="Sushant Kumar, Freelance Designer and Developer">
+			</div>
+			<div class="info">
+				<h3 class="name"> Sushant Kumar </h3>
+				<h4 class="designation"> Frontend Developer </h4>
+			 	<p> Loves solving problems through business and technology </p>
+			 	<div class="footer-links">
+				 	<ul class="profile-links">
+				 		<li><a href="https://linkedin.com/in/sushantkr" target="_blank"> <i class="fa fa-linkedin"></i> </a> </li>
+				 		<li><a href="https://angel.co/sushantkr17" target="_blank"> <i class="fa fa-angellist"></i> </a> </li>
+				 		<li><a href="https://github.com/sushantkr17" target="_blank"> <i class="fa fa-github"></i> </a> </li>
+				 		<li><a href="https://www.facebook.com/Sushantkr17" target="_blank"> <i class="fa fa-facebook"></i> </a> </li>
+				 		<li><a href="http://sushantkr.com" target="_blank"> <i class="fa fa-globe"></i> </a> </li>
+				 	</ul>
+			 	</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="clearfix"></div>
+</section>
+<footer class="get-started footer">
+	<div class="container">
+		<ul class="footer-links">
+			<li class="left"> &copy; Putboard | 2016 </li>
+			<li class="left"> <a href="/about"> About </a> </li>
+			<li class="left"> <a href=""> Terms of Service </a> </li>
+			<li class="left"> <a href=""> Privacy </a> </li>
+			<li class="right"> <a href=""> <i class="fa fa-facebook"></i> </a> </li>
+			<li class="right"> <a href=""> <i class="fa fa-twitter"></i> </a> </li>
+			<li class="right"> <a href=""> <i class="fa fa-linkedin"></i> </a> </li>
+		</ul>
+	</div>
+</footer>
+{% endblock content %}

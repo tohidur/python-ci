@@ -1,0 +1,110 @@
+{%extends 'base.html' %}
+{%load staticfiles%}
+{% block style %}
+    <meta name="google-site-verification" content="OdJJgR4KFZjxJTnrqoxiq__Ol035fKqfGHh_1PwY4TI" />
+    <meta name="google-site-verification" content="_MApeBXAHSf3cAhpbWvtdNxtbW-zWG2vJ4xOWX84yFw" />
+{% endblock %}
+{% block content %}
+<!-- Create Board Modal -->
+<div class="modal fade" id="createBoard" tabindex="-1" role="dialog" aria-labelledby="createBoardLabel">
+  <div class="modal-dialog add-link-dialog" role="document">
+    <div class="modal-content add-link-content">
+      <div class="modal-body">
+        <h4 class="modal-title"> Create a new board </h4>
+        <a class="close-modal" data-dismiss="modal" aria-label="Close">
+    		<span aria-hidden="true"><i class="fa fa-times"></i></span>
+    	</a>
+        <!--- Add the form for adding link -->
+        <form action="" class="form-add-link">
+        	<input type="text" placeholder="Board Name" class="form-input">
+        	<textarea class="form-input" rows="3" cols="100" placeholder="Small Description (Optional)"></textarea>
+        	
+        	<button type="submit" class="btn btn-lg btn-add-link">
+        	 + Create Board
+        	</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- Section Home -->
+    <section class="intro-header pos-rel">
+        <div class="container">
+        	<div class="bg-gradient"></div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+						<h1 class="text-bg text-center"> Put your links into Boards </h1>
+                        <h4 class="sec-title text-center"> Putboard is a nice way to curate links from all over the web </h4>
+                        <div class="form-signup-header text-center">
+							<a href='/register'><button class="btn btn-lg btn-submit-email"> Get Started </button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ft-section">
+    	<div class="row no-mar">
+		    <div class="col-md-6 feature-img bg-greyish text-center">
+		    	<img src="{% static 'img/desc1.png' %}" alt="Organize your collections" class="img-responsive">
+		    </div>
+		    <div class="col-md-6 feature-content bg-white">
+		    	<div class="details">
+		    		<h3 class="title"> Curate your links </h3>
+		    		<p class="col-md-10 no-pad"> 
+		    			Curate all your links at one place and categorise it with tags. You can even search through your links based on title or tags.
+		    		</p>
+					<a href="/register"><button class="btn btn-small btn-submit-email mar-t-20"> Get Started </button></a>
+			    </div>
+		    </div>
+		    <div class="clearfix"></div>
+    	</div>
+    </section>
+    <section class="ft-section">
+    	<div class="row no-mar">
+	    	<div class="col-md-6 feature-img bg-greyish text-center">
+	    		<img src="{% static 'img/desc2.png' %}" alt="Share your links" class="img-responsive">
+	    	</div>
+	    	<div class="col-md-6 feature-content bg-white">
+	    		<div class="details">
+		    		<h3 class="title"> Share with loved ones </h3>
+		    		<p class="col-md-10 no-pad"> 
+		    			You can easily share your board with your loved ones. Putboard gives you options to create the private or public boards.
+		    		</p>
+		    		<a href="/register"><button class="btn btn-small btn-submit-email mar-t-20"> Get Started </button></a>
+		    	</div>
+	    	</div>
+	    	<div class="clearfix"></div>
+    	</div>
+    </section>
+   <!--  <section class="ft-section get-started">
+    	<div class="pad-75">
+	    	<h2 class="text-center"> Explore the web </h2>
+	    	<h3 class="text-center text-white"> See how people are using Putboard in their daily life</h3>
+	    	
+    	</div>
+    </section> -->
+    <section class="ft-section get-started">
+    	<div class="pad-75">
+    	 <h2 class="text-center"> Create your first board now </h2>
+    	  <div class="form-signup-header text-center">
+				<a href="/register"><button class="btn btn-lg btn-submit-email"> Get Started </button></a>
+          </div>
+    	</div>
+    </section>
+    <footer class="get-started footer">
+    	<div class="container">
+    		<ul class="footer-links">
+    			<li class="left"> &copy; Putboard | 2016 </li>
+    			<li class="left"> <a href="/about"> About </a> </li>
+    			<li class="left"> <a href=""> Terms of Service </a> </li>
+    			<li class="left"> <a href=""> Privacy </a> </li>
+    			<li class="right"> <a href=""> <i class="fa fa-facebook"></i> </a> </li>
+    			<li class="right"> <a href=""> <i class="fa fa-twitter"></i> </a> </li>
+    			<li class="right"> <a href=""> <i class="fa fa-linkedin"></i> </a> </li>
+    		</ul>
+    	</div>
+    </footer>
+
+{% endblock content %}

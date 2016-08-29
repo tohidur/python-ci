@@ -1,0 +1,10 @@
+general:
+  branches:
+    only:
+      - dev
+machine:
+  python:
+    version: 2.7.5
+test:
+  override:
+    - python manage.py test

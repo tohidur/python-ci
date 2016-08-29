@@ -1,0 +1,134 @@
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Collection of links from all over the world">
+    <meta name="author" content="Putboard">
+    <meta property="og:image" content="{%static 'img/desc1.png'%}"/>
+    <!-- <meta name="twitter:image:src" content="https://www.dreamteamfc.com/c/s3/dreamteamfc-prod/uploads/2016/06/Lionel-Messi.jpg">
+    <meta name="twitter:domain" content="YourDomain.com"> -->
+
+    <title>Putboard</title>
+    <link href="{% static "img/icons/favicon.ico"%}" rel="shortcut icon">
+    <link href="{% static "css/bootstrap.min.css"%}" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link href="{% static 'css/select2.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/home.css' %}" rel="stylesheet">
+    <style>
+        .selectmultiple{
+            width: 312px
+        }
+    </style>
+    {% block style %}
+    {%endblock%}
+</head>
+<body>
+    <nav class="navbar navbar-default navbar navbar-home navbar-fixed-top header topnav" role="navigation">
+        <div class="navbar-header">
+             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+             </button>
+            <a class="" href="/"> <img src="{% static 'img/logo_w.png' %}" class="logo" alt="logo"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            {% if not request.user.is_authenticated %}
+            <div class="">
+                <ul class="nav navbar-nav navbar-right">
+                    <li> <a href="/login"> Login </a> </li>
+                    <li class="btn-signup"> <a href="/register"> Sign up </a> </li>
+                </ul>
+            </div>
+            {% else %}
+            <div class="">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="user-profile">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="username">{{request.user.first_name}} <i class="fa fa-caret-down" aria-hidden="true"></i></spans>
+                    </a>
+                        <ul class="dropdown-menu more-actions">
+                            <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+        <div class="clearfix"></div>
+    </nav>
+	{% block content %}
+	{% endblock content %}
+</body>
+<script src="{% static "js/jquery.min.js" %}" ></script>
+<script src="{% static "js/bootstrap.min.js" %}" ></script>
+<script src="{% static "js/jquery.validate.min.js" %}" ></script>
+<script src="{% static "js/select2.min.js"%}"></script>
+<script type="text/javascript">
+    $(function() {
+        if($(window).width() < 460) {
+            $("#site-wrapper").removeClass('show-nav');
+        }
+        // Toggle Nav on Click
+        $('.toggle-nav').click(function() {
+            // Calling a function in case you want to expand upon this.
+            toggleNav();
+        });
+    });
+
+    function toggleNav() {
+        if ($('#site-wrapper').hasClass('show-nav')) {
+            // Do things on Nav Close
+            $('#site-wrapper').removeClass('show-nav');
+            
+        } else {
+            // Do things on Nav Open
+            $('#site-wrapper').addClass('show-nav');
+           
+        }
+
+        //$('#site-wrapper').toggleClass('show-nav');
+    }
+
+    var slug = '{{slug}}';
+    var wait = '{% static "img/icons/wait1.gif" %}';
+    var favicon = '{% static "img/icons/favicon.ico" %}';
+    var board_title = '{{collection.title}}';
+    var board_description = '{{collection.description}}';
+    var board_privacy = '{{collection.privacy}}'
+    $('.selectmultiple').select2({
+        placeholder: "Attach a Tag",
+        dropdownAutoWidth: true,
+        tags: true,
+    });
+</script>
+<script src="{% static "js/home.js" %}" ></script>
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ ga('create', 'UA-69563118-3', 'auto');
+ ga('send', 'pageview');
+
+</script>
+<!-- Hotjar Tracking Code for http://www.putboard.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:250600,hjsv:5};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+</html>

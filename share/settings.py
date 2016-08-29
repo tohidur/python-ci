@@ -155,7 +155,6 @@ MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    os.path.join("c:\Users\Rahaman\Desktop\python-ci\static")
 ]
 
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "../static_cdn")

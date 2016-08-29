@@ -7,6 +7,6 @@ machine:
     version: 2.7.5
 test:
   pre:
-    - python manage.py collectstatic
+    - python manage.py collectstatic --no-input
   override:
     - python manage.py test

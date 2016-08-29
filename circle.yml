@@ -1,10 +1,12 @@
 general:
   branches:
     only:
-      - dev
+      - master
 machine:
   python:
     version: 2.7.5
 test:
+  pre:
+    - python manage.py collectstatic
   override:
     - python manage.py test

@@ -12,6 +12,7 @@ test:
     - sudo mkdir /home/static_cdn/admin
     - sudo mkdir /home/static_cdn/js
     - sudo mkdir /home/static_cdn/img
+    - sudo chmod -R 777 /home/static_cdn
     - python manage.py collectstatic --noinput
   override:
     - python manage.py test

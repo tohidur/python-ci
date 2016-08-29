@@ -8,6 +8,10 @@ machine:
 test:
   pre:
     - sudo mkdir /home/static_cdn
+    - sudo mkdir /home/static_cdn/css
+    - sudo mkdir /home/static_cdn/admin
+    - sudo mkdir /home/static_cdn/js
+    - sudo mkdir /home/static_cdn/img
     - python manage.py collectstatic --noinput
   override:
     - python manage.py test

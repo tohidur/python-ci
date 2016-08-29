@@ -7,7 +7,7 @@ machine:
     version: 2.7.5
 test:
   pre:
-    - mkdir /home/static_cdn
+    - sudo mkdir /home/static_cdn
     - python manage.py collectstatic --noinput
   override:
     - python manage.py test

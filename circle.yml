@@ -7,6 +7,8 @@ machine:
     version: 2.7.5
 test:
   pre:
+    - pwd
+    - python -m SimpleHTTPServer 8888
     - sudo mkdir /home/static_cdn
     - sudo mkdir /home/static_cdn/css
     - sudo mkdir /home/static_cdn/admin

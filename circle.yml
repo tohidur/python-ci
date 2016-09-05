@@ -7,8 +7,6 @@ machine:
     version: 2.7.5
 test:
   pre:
-    - pwd
-    - python -m SimpleHTTPServer 8888
     - sudo mkdir /home/static_cdn
     - sudo mkdir /home/static_cdn/css
     - sudo mkdir /home/static_cdn/admin
@@ -16,5 +14,8 @@ test:
     - sudo mkdir /home/static_cdn/img
     - sudo chmod -R 777 /home/static_cdn
     - python manage.py collectstatic --noinput
+    - python -m SimpleHTTPServer 8888
   override:
     - python manage.py test
+  post:
+    - fuser -k 8888/tcp

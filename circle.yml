@@ -2,9 +2,14 @@ general:
   branches:
     only:
       - master
+
 machine:
   python:
     version: 2.7.5
+  hosts:
+    circlehost: 127.0.0.1
+    dev.rollmaal.com: 127.0.0.1
+
 test:
   pre:
     - python -m SimpleHTTPServer 8888

@@ -64,3 +64,6 @@ class Migration(migrations.Migration):
             field=models.ManyToManyField(to='collection.Tag'),
         ),
     ]
+
+# Test
+

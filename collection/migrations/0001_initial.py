@@ -65,5 +65,3 @@ class Migration(migrations.Migration):
         ),
     ]
 
-# Test
-
